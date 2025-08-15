@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent } from "./ui/card";
-import { services } from "../mockData";
+import { useServices } from "../hooks/useApi";
+import { Skeleton } from "./ui/skeleton";
 
 const ServicesSection = () => {
   return (
