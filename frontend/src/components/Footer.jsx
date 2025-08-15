@@ -101,28 +101,28 @@ const Footer = () => {
               <h4 className="text-sm font-semibold text-white">Follow Us</h4>
               <div className="flex space-x-4">
                 <a
-                  href={companyInfo.socialMedia.facebook}
+                  href={companyInfo?.socialMedia?.facebook || "#"}
                   className="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition-colors duration-200"
                   aria-label="Facebook"
                 >
                   <Facebook className="h-5 w-5" />
                 </a>
                 <a
-                  href={companyInfo.socialMedia.instagram}
+                  href={companyInfo?.socialMedia?.instagram || "#"}
                   className="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition-colors duration-200"
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
                 </a>
                 <a
-                  href={companyInfo.socialMedia.youtube}
+                  href={companyInfo?.socialMedia?.youtube || "#"}
                   className="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition-colors duration-200"
                   aria-label="YouTube"
                 >
                   <Youtube className="h-5 w-5" />
                 </a>
                 <a
-                  href={companyInfo.socialMedia.twitter}
+                  href={companyInfo?.socialMedia?.twitter || "#"}
                   className="p-2 bg-gray-800 rounded-lg hover:bg-purple-600 transition-colors duration-200"
                   aria-label="Twitter"
                 >
