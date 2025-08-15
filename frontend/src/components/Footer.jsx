@@ -23,7 +23,17 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-gray-400 leading-relaxed max-w-md">
-              {companyInfo.description}
+              {loading ? (
+                <div className="space-y-2">
+                  <Skeleton className="h-4 w-full" />
+                  <Skeleton className="h-4 w-4/5" />
+                  <Skeleton className="h-4 w-3/4" />
+                </div>
+              ) : companyInfo ? (
+                companyInfo.description
+              ) : (
+                "CC Software Solutions is a leading software engineering company specializing in innovative solutions."
+              )}
             </p>
           </div>
 
