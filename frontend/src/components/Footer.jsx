@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube, Twitter, Phone, Mail } from "lucide-react";
-import { companyInfo } from "../mockData";
+import { useCompanyInfo } from "../hooks/useApi";
+import { Skeleton } from "./ui/skeleton";
 
 const Footer = () => {
+  const { data: companyInfo, loading, error } = useCompanyInfo();
+
   return (
     <footer className="bg-gray-900 text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
