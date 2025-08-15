@@ -4,6 +4,49 @@ import { useServices } from "../hooks/useApi";
 import { Skeleton } from "./ui/skeleton";
 
 const ServicesSection = () => {
+  const { data: services, loading, error } = useServices();
+
+  if (loading) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-gray-600 text-lg mb-4 font-medium">
+              ALL BUSINESS REQUIREMENTS UNDER ONE ROOF
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-8">
+              From Product Design To Software Development
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <Card key={index} className="border-0 bg-white shadow-lg">
+                <CardContent className="p-6 text-center">
+                  <Skeleton className="w-16 h-16 rounded-lg mx-auto mb-6" />
+                  <div className="space-y-4">
+                    <Skeleton className="h-6 w-3/4 mx-auto" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-5/6 mx-auto" />
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-red-600">Error loading services: {error}</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
