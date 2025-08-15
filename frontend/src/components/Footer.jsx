@@ -80,11 +80,19 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-400">{companyInfo.phone}</span>
+                {loading ? (
+                  <Skeleton className="h-4 w-32" />
+                ) : (
+                  <span className="text-gray-400">{companyInfo?.phone || "+94 770 832 340"}</span>
+                )}
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                <span className="text-gray-400">{companyInfo.email}</span>
+                {loading ? (
+                  <Skeleton className="h-4 w-40" />
+                ) : (
+                  <span className="text-gray-400">{companyInfo?.email || "info@ccsoftwares.com"}</span>
+                )}
               </div>
             </div>
 
